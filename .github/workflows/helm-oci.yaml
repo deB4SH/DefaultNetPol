@@ -52,4 +52,4 @@ jobs:
         if: github.event_name != 'pull_request'
         id: push
         run: |
-          helm push ./dist/helm-restart-pod-job-${{ steps.append_version.outputs.HELM_FINAL_VERSION }}.tgz oci://${{ steps.meta.outputs.REPOSITORY }}
+          helm push ./dist/default-netpol-${{ steps.append_version.outputs.HELM_FINAL_VERSION }}.tgz oci://${{ steps.meta.outputs.REPOSITORY }}
