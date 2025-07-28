@@ -1,0 +1,23 @@
+{{- if .Values.netPol.enabled }}
+  {{- range $index, $value := .Values.netpol.policies }}
+    apiVersion: networking.k8s.io/v1
+    kind: NetworkPolicy
+    metadata:
+      name: {{ .name }}
+    namespace: {{ .namespace }}
+    ingress:
+      {{- if .ingressEnabled }}
+        {{ toYaml .ingress | nindent 2 }}
+      {{- end }}
+    egress:
+      {{- if .egressEnabled }}
+        {{ toYaml .egress | nindent 2 }}
+      {{- end }}
+    policyTypes:
+      {{ toYaml .policyTypes | nindent 2 }}  
+    podSelector:
+      {{ toYaml .matcher | nindent 2 }}
+    ---
+  {{- end }}
+{{- end }}
+ 
