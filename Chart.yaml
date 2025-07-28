@@ -4,6 +4,6 @@ description: This Helm chart will deploy Netpols which are specified in the valu
 
 # -- This is the chart version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.0.3
+version: 1.0.4
 
 type: application
