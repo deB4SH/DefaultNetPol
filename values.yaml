@@ -1,0 +1,11 @@
+netpol:
+  enabled: false
+#  policies:
+#    - name: "overlay_me"
+#      namespace: "overlay_me"
+#      ingressEnabled: false
+#      egressEnabled: false
+#      policyTypes:
+#        - "overlay_me"
+#      podSelector:
+#        matchLabels:
