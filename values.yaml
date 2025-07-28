@@ -1,4 +1,4 @@
-netpol:
+netPol:
   enabled: false
 #  policies:
 #    - name: "overlay_me"
