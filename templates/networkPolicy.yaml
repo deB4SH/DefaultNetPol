@@ -7,16 +7,14 @@ metadata:
   namespace: {{ .namespace }}
 ingress:
   {{- if .ingressEnabled }}
-    {{ toYaml .ingress | nindent 2 }}
+    {{- toYaml .ingress | nindent 2 }}
   {{- end }}
 egress:
   {{- if .egressEnabled }}
-    {{ toYaml .egress | nindent 2 }}
+    {{- toYaml .egress | nindent 2 }}
   {{- end }}
-policyTypes:
-  {{ toYaml .policyTypes | nindent 2 }}  
-podSelector:
-  {{ toYaml .matcher | nindent 2 }}
+policyTypes: {{ toYaml .policyTypes | nindent 2 }}  
+podSelector: {{ toYaml .podSelector | nindent 2 }}
 ---
 {{- end }}
 {{- end }}
