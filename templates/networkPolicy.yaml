@@ -1,5 +1,5 @@
 {{- if .Values.netPol.enabled }}
-  {{- range $index, $value := .Values.netpol.policies }}
+  {{- range $index, $value := .Values.netPol.policies }}
     apiVersion: networking.k8s.io/v1
     kind: NetworkPolicy
     metadata:
