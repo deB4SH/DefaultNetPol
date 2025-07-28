@@ -1,0 +1,9 @@
+apiVersion: v2
+name: default-netpol
+description: This Helm chart will deploy Netpols which are specified in the values.yaml.
+
+# -- This is the chart version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 1.0.0
+
+type: application
