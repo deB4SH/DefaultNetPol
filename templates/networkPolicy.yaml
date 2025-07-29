@@ -6,17 +6,16 @@ metadata:
   name: {{ .name }}
   namespace: {{ .namespace }}
 spec:
+  {{- if .ingressEnabled }}
   ingress:
-    {{- if .ingressEnabled }}
-      {{- toYaml .ingress | nindent 4 }}
-    {{- end }}
+    {{- toYaml .ingress | nindent 4 }}
+  {{- end }}
+  {{- if .egressEnabled }}  
   egress:
-    {{- if .egressEnabled }}
-      {{- toYaml .egress | nindent 4 }}
-    {{- end }}
+    {{- toYaml .egress | nindent 4 }}
+  {{- end }}
   policyTypes: {{ toYaml .policyTypes | nindent 4 }}  
   podSelector: {{ toYaml .podSelector | nindent 4 }}
-  ---
-  {{- end }}
-  {{- end }}
- 
+---
+{{- end }}
+{{- end }}
