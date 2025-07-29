@@ -14,8 +14,10 @@ spec:
   egress:
     {{- toYaml .egress | nindent 4 }}
   {{- end }}
-  policyTypes: {{ toYaml .policyTypes | nindent 4 }}  
-  podSelector: {{ toYaml .podSelector | nindent 4 }}
+  policyTypes: 
+    {{ toYaml .policyTypes | nindent 4 }}  
+  podSelector: 
+    {{ toYaml .podSelector | nindent 4 }}
 ---
 {{- end }}
 {{- end }}
