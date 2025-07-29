@@ -5,17 +5,18 @@ kind: NetworkPolicy
 metadata:
   name: {{ .name }}
   namespace: {{ .namespace }}
-ingress:
-  {{- if .ingressEnabled }}
-    {{- toYaml .ingress | nindent 2 }}
+spec:
+  ingress:
+    {{- if .ingressEnabled }}
+      {{- toYaml .ingress | nindent 4 }}
+    {{- end }}
+  egress:
+    {{- if .egressEnabled }}
+      {{- toYaml .egress | nindent 4 }}
+    {{- end }}
+  policyTypes: {{ toYaml .policyTypes | nindent 4 }}  
+  podSelector: {{ toYaml .podSelector | nindent 4 }}
+  ---
   {{- end }}
-egress:
-  {{- if .egressEnabled }}
-    {{- toYaml .egress | nindent 2 }}
   {{- end }}
-policyTypes: {{ toYaml .policyTypes | nindent 2 }}  
-podSelector: {{ toYaml .podSelector | nindent 2 }}
----
-{{- end }}
-{{- end }}
  
