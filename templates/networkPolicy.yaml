@@ -10,7 +10,7 @@ spec:
   ingress:
     {{- toYaml .ingress | nindent 4 }}
   {{- end }}
-  {{- if .has "Egress" .policyTypes }}  
+  {{- if has "Egress" .policyTypes }}  
   egress:
     {{- toYaml .egress | nindent 4 }}
   {{- end }}
