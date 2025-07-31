@@ -3,9 +3,9 @@ netPol:
 #  policies:
 #    - name: "overlay_me"
 #      namespace: "overlay_me"
-#      ingressEnabled: false
-#      egressEnabled: false
+#      egress:
+#      # to:...
 #      policyTypes:
-#        - "overlay_me"
+#        - "Egress"
 #      podSelector:
 #        matchLabels:

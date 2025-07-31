@@ -6,11 +6,11 @@ metadata:
   name: {{ .name }}
   namespace: {{ .namespace }}
 spec:
-  {{- if .ingressEnabled }}
+  {{- if has "Ingress" .policyTypes }}
   ingress:
     {{- toYaml .ingress | nindent 4 }}
   {{- end }}
-  {{- if .egressEnabled }}  
+  {{- if .has "Egress" .policyTypes }}  
   egress:
     {{- toYaml .egress | nindent 4 }}
   {{- end }}
