@@ -5,6 +5,14 @@ kind: NetworkPolicy
 metadata:
   name: {{ .name }}
   namespace: {{ .namespace }}
+  {{- if .annotations }}
+  annotations:
+    {{- toYaml .policyTypes | nindent 4 }}  
+  {{- end }}
+  {{- if .labels }}
+  labels:
+    {{- toYaml .policyTypes | nindent 4 }}  
+  {{- end }}
 spec:
   {{- if has "Ingress" .policyTypes }}
   ingress:

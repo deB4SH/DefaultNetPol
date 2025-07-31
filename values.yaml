@@ -3,6 +3,8 @@ netPol:
 #  policies:
 #    - name: "overlay_me"
 #      namespace: "overlay_me"
+#      annotations:
+#        test: true
 #      egress:
 #      # to:...
 #      policyTypes:
