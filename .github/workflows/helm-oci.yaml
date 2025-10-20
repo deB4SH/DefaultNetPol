@@ -1,4 +1,4 @@
-name: helm-package-and-deploy
+name: package-and-deploy-oci
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
 
 jobs:
   package-and-deploy:
-    if: github.ref == 'refs/heads/main'
     permissions:
       contents: read
       packages: write
