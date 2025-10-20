@@ -3,7 +3,7 @@ name: package-and-deploy-oci
 on:
   push:
     branches:
-      - main
+      - release
 
 jobs:
   package-and-deploy:
