@@ -4,13 +4,16 @@ Helm Chart for Kubernetes Network Policies
 This Helm chart provides a flexible way to deploy Kubernetes [NetworkPolicy](https://kubernetes.io/docs/concepts/services-networking/network-policies/) resources. It allows you to define and manage network policies through a values.yaml file, enabling fine-grained control over pod-to-pod communication within your cluster.
 
 # Installation
+>NOTE: Remember this is an oci registry. You need to login with your desired container runtime first.
+
 1) Add the Helm repository (if hosted publicly):
 ```bash
-helm repo add netpol TODO_REPO_HERE
+helm repo add netpol oci://ghcr.io/deb4sh/defaultnetpol
+helm repo update
 ```
 2) Fetch and install the chart:
 ```bash
-helm install mynetpols netpol/defaultnetpol
+helm install default-netpol ghcr.io/deb4sh/defaultnetpol --version 1.5.1-a08958
 ```
 3) Customize configuration via values.yaml (see Configuration section).
 
