@@ -4,7 +4,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: {{ .name }}
-  namespace: {{ .namespace }}
+  namespace: {{ .namespace | default $.Release.Namespace }}
   {{- if .annotations }}
   annotations:
     {{- toYaml .annotations | nindent 4 }}  

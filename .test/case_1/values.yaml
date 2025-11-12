@@ -1,0 +1,13 @@
+netPol:
+  enabled: true
+  policies:
+    - name: "overlay_me"
+      egress:
+        - ports:
+          - port: 6443
+            protocol: TCP
+      policyTypes:
+        - "Egress"
+      podSelector:
+        matchLabels:
+          app.kubernetes.io/name: "myAwesomeThing"
