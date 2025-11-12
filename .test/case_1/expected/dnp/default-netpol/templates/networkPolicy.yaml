@@ -1,0 +1,17 @@
+---
+# Source: default-netpol/templates/networkPolicy.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: overlay_me
+  namespace: testing
+spec:  
+  egress:
+    - ports:
+      - port: 6443
+        protocol: TCP
+  policyTypes:
+    - Egress  
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: myAwesomeThing
