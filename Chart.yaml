@@ -1,4 +1,4 @@
 apiVersion: v2
 name: default-netpol
 description: This Helm chart will deploy network policies which are specified in the values.yaml.
-version: 1.5.1
+version: 1.5.2
